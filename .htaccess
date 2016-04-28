@@ -1,0 +1,11 @@
+Header set Access-Control-Allow-Origin "*"
+
+# Basic rewrite rules, stop unneeded PERL bot, block subversion directories
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule   ^production/bienvenue$        #/home
+RewriteRule   ^production/quis-suis-je$     #/quis-suis-je
+RewriteRule   ^production/mes-soins$        #/messoins
+RewriteRule   ^production/contact$          #/contact
+RewriteRule   ^production/cours$            #/cours
+</IfModule>

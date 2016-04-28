@@ -1,0 +1,129 @@
+			<section class="slogan">
+			<div class="row">
+				<div class="container">
+					<div class="col-sm-6 col-md-6 col-lg-6">
+						<h2>Contact</h2>
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-6 hidden-xs">
+						<ul class="nav nav-pills about-img pull-right">
+						  <li><div class="img-about1 img-about4 img-circle"></div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</section>
+	</header>
+	<section class="container" data-ng-controller="emailCtrl">
+	<div class="row contact-line" data-ng-cloak>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+				<div class="headline">
+					<h3>Envoyez un message<span class="line envoyez hidden-xs"></span></h3>
+				</div>
+				<div class="contact-form">
+					<div data-ng-hide="messageSuccess == false" class="alert alert-success hide-nojs col-lg-10 col-md-10 col-sm-10 col-xs-10">Votre message a été envoyé avec succès. Merci!</div>
+					<div data-ng-hide="emptyForm == false" class="alert alert-danger hide-nojs  col-lg-10 col-md-10 col-sm-10 col-xs-10">{{errorMessage}}</div>
+					<form name="emailForm" data-ng-submit="email()" class="form-alert" novalidate>
+					<div class="row">
+						<div class="form-group">
+							<div class="input-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						  		<input type="text" class="form-control" name="name" placeholder="Nom et Prénom"  data-ng-minlength=3 maxlength=20 data-ng-model="person.name" required>
+						  		<div class="alert alert-danger error hide-nojs" data-ng-show="emailForm.name.$dirty && emailForm.name.$invalid && emailForm.submitted" data-ng-hide="messageSuccess == true || emptyForm == false || emailForm.name.$valid" >
+						        <small class="error" data-ng-show="emailForm.name.$error.required">
+						            Merci de saisir votre nom.
+						        </small>
+						        <small class="error" data-ng-show="emailForm.name.$error.minlength">
+						                Merci de saisir au moins 3 lettres pour votre nom.
+						        </small>
+						      </div>
+						       <div class="alert alert-success hide-nojs" data-ng-show="emailForm.name.$valid">
+						        	<small>
+						            	Merci
+						        	</small>
+						        </div>
+							</div>
+							<div class="input-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						  		<input type="email" name="emailFrom" class="form-control" placeholder="Email" data-ng-model="person.email" required>
+						  		<div class="alert alert-danger error hide-nojs" data-ng-show="emailForm.emailFrom.$dirty && emailForm.emailFrom.$invalid && emailForm.submitted" data-ng-hide="messageSuccess == true || emptyForm == false" >
+						        <small class="error" data-ng-show="emailForm.emailFrom.$error.required">
+						            Merci de saisir une adresse email.
+						        </small>
+						        <small class="error" data-ng-show="emailForm.emailFrom.$error.email">
+						            Merci de saisir une adresse email valide.
+						        </small>
+						      </div>
+							</div>
+							<div class="clearfix"></div><br />
+							<div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+						  		<textarea placeholder="Message" name="message" data-ng-minlength="5" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" rows="7" data-ng-model="person.message" required> </textarea>
+						  			<div class="alert alert-danger error hide-nojs" data-ng-show="emailForm.message.$dirty && emailForm.message.$invalid && emailForm.submitted"  data-ng-hide="messageSuccess == true || emptyForm == false" >
+						        	<small class="error" data-ng-show="emailForm.message.$error.required">
+						            Merci de saisir un message.
+						        </small>
+						        <small class="error" data-ng-show="emailForm.message.$error.minlength">
+						                Merci de saisir au moins 5 lettres pour votre message.
+						        </small>
+						        </div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="submit-button col-xs-10 col-sm-10 col-md-10 col-lg-10">
+								<button type="submit" class="btn btn-default" name="Submit">Envoyez</button>
+							</div>
+						</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+						<div class="row">
+				<div class="headline">
+					<h3>Contact<span class="line sidebar hidden-xs"></span></h3>
+				</div>
+				<ul class="contact-details">
+					<li class="row">
+						<span class="nom">
+							Rosanna Cazzaro
+						</span>
+					</li>
+					<li class="row">
+							<div class="pull-left">
+								<i class="fa fa-map-marker fa-2x"></i>
+							</div>
+							<div class="right-side">
+								Rue Baptiste-Savoye 36 
+							<br> 
+							<span class="town">
+								2610 St-Imier
+							</span>
+							</div>
+					</li>
+					<li class="clearfix"></li>
+					<li class="row">
+						<div class="pull-left">
+							<i class="fa fa-phone fa-2x"></i> 
+						</div>
+						<div class="right-side">
+							079 543 68 07
+						</div>
+					</li>
+					<li class="row">
+						<div class="pull-left">
+							<i class="fa fa-envelope "></i>
+                            
+						</div>
+						<div class="right-side">
+							<a href="mailto:info@institutdeva.ch" onmouseover="this.href=this.href.replace(/x/g,'');">info@institutdeva.ch</a>						
+						</div>
+					</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<div class="row">
+		<div id="googleMap" class="map-canvas">
+        <ui-gmap-google-map center="mapOptions.center" zoom="mapOptions.zoom">
+            <ui-gmap-window show="show" coords="coords" options="windowOptions"></ui-gmap-window>
+            <ui-gmap-marker idKey="0" coords="coords"></ui-gmap-marker>
+        </ui-gmap-google-map>
+        </div>	
+		</div>
+	</section>

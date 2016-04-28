@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+
+
+/**
+ **  Qui suis-je.html
+ **
+ ***/
+ 
+ .navbar
+ {
+ 	margin-bottom:0;
+ }
+ 
+ .slogan
+ {
+ 	background: url(../img/breadcrumbsbg.jpg) repeat-x scroll 0 0 #EEE1D1;
+ 	text-align:left;
+ }
+ 
+ .slogan h2
+ {
+ 	margin-bottom: 35px;
+ 	font-family: 'oswald';
+ 	font-size: 48px;
+ }
+ 
+.slogan h2 span 
+{
+    color: #8E647D;
+    font-family: "oswald";
+    font-size: 18px;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.about-img li
+{
+	margin-right:2px;
+}
+
+.img-about1
+{
+	background: url(../img/meditation-small.jpg) no-repeat;
+	background-size: 100% 100%;
+	height:120px;
+	width:120px;
+}
+
+.img-about1.img-about2
+{
+	background: url(../img/levante.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+
+.img-about1.img-about3
+{
+	background: url(../img/sky.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+
+.img-about1.img-about4
+{
+	background: url(../img/buddah-small.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+
+.line.sidebar
+{
+	width:65%;
+}
+
+.bottom-dashed
+{
+	border-bottom: 1px dashed;
+}
+
+.datebg
+{
+	width:85px;
+	margin-top: 4px;
+	background: url(../img/date.png);
+}
+
+.caption-details h2
+{
+	margin-top:0;
+	font-size:29px;
+}
+
+.thumbnail .datebg p {
+    color: #FAD2A1;
+    font-family: oswald;
+    font-size: 14px;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}

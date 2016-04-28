@@ -1,0 +1,14 @@
+<style>.panel.panel-default
+{
+	margin-top:40px;
+}
+.panel-heading h3
+{
+	margin-top:0;
+	padding:10px;
+	color:#FFF;
+}
+.form-control
+{
+	width:92%;
+}</style><div class="container"><div class="row"><div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10"><div class="panel panel-default"><div class="panel-heading"><h3>Gestion des cours</h3></div><div class="panel-body"><div class="alert alert-error" ng-show="loginError">Utilisateur et/ou mot de passe ne pas valide.</div><form ng-submit="submit()"><div><i class="fa fa-user fa-2x pull-left"></i><input type="text" name="username" ng-model="user.username" placeholder="utilisateur" class="form-control"></div><div class="clearfix"></div><br><div><i class="fa fa-lock fa-2x pull-left"></i><input type="password" name="password" ng-model="user.password" placeholder="Mot de passe" class="form-control"></div><div class="clearfix"></div><br><div class="pull-right"><input class="btn" type="submit" name="submit" value="Login"></div></form></div></div></div></div></div>

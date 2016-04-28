@@ -1,0 +1,42 @@
+<style>.footer-empty
+{
+	height:100px;
+}
+.hide-nojs
+{
+	
+}
+.showjs
+{
+	display:block;
+}
+.fa-arrow-right
+{
+	color:#612D89;
+	margin-right:0;
+}
+.textarea-textangular .form-control,.textarea-textangular .form-control .ta-bind
+{
+    min-height:300px;
+    text-align:left;
+}
+.btn.btn-success 
+{
+    margin-bottom:5px;
+}
+.form-control
+{
+    text-align:center;
+    min-width:140px;
+    height:auto;
+}
+.modal-dialog
+{
+    width:80%;
+}
+.panel-title
+{
+    color:#fff;
+    font-size:20px;
+    padding:5px 20px;
+}</style><section class="container course-container"><div class="row"><div class="headline"><h3>Liste des Cours<span class="line hidden-xs"></span></h3></div><h5>Choisissez une date, ecrivez un titre et une description</h5><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addCourse">Ajouter Cours</button> <button type="button" class="btn btn-primary btn-lg" data-ng-click="logout()">Logout</button><table class="table table-hover"><thead><tr><th>Date</th><th>Titre</th><th>Description</th><th>Button</th></tr></thead><tbody><tr data-ng-repeat="course in courses | orderBy:'created'"><td>{{course.date}}</td><td>{{course.title}}</td><td ng-bind-html="course.description"></td><td><button class="btn btn-success btn-lg" data-ng-click="editCourse(course)" data-toggle="modal" data-target="#addCourse">Modifier</button> <button class="btn btn-danger btn-lg" data-ng-click="deleteCourse(course)"><i class="fa fa-trash-o"></i></button></td></tr></tbody></table><!-- Modal --><div class="modal fade" id="addCourse" data-my-modal tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="btn close pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></button><h4 class="modal-title" id="myModalLabel">Ajouter un nouveau cours</h4></div><div class="modal-body"><div class="row"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Date</h3></div><div class="panel-body"><datepicker data-date-format="dd MMMM yyyy"><input type="text" data-ng-model="newcourse.date" class="form-control"></datepicker></div></div></div><div class="row"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Titre</h3></div><div class="panel-body"><input type="text" data-ng-model="newcourse.title" class="form-control" required> <span data-ng-show="showTitleError">{{insertTitle}}</span></div></div></div><div class="row"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Description</h3></div><div class="panel-body"><div data-text-angular class="textarea-textangular" ng-model="newcourse.description"></div><span data-ng-show="showDescriptionError">{{insertDescription}}</span></div></div></div></div><div class="modal-footer"><button class="btn btn-danger btn-lg" data-dismiss="modal" data-ng-click="clearForm()">Annuler</button> <button data-ng-show="!editMode" class="btn btn-success btn-lg" data-ng-click="addCourse(newcourse)">Enregistrer</button> <button data-ng-show="editMode" class="btn btn-success btn-lg" data-ng-click="updateCourse(newcourse)">Modifier</button></div></div></div></div></div></section>
